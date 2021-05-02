@@ -1,5 +1,6 @@
 let menuIndex = 1;
 let secure = false;
+let welcomePoPup;
 
 function metro33() {
    menuIndex = 1;
@@ -50,16 +51,20 @@ function ll() {
 
    let bek1 = document.getElementById('bek1');
    bek1.innerHTML = "<h2>Vizuális élmény</h2> <p>A játék grafikája szinte ugyanaz mint az előzőé. Ugyanúgy volt egy felújított verziója.</p> <p>A fény effektek itt is rettentően szépek. Szintén ki lehet lőni a fényforrásokat, lámpákat. Ez segít a lopakodásban, ugyanis sötétben nehezebb látni.</p> <p>A textúrák és normálok itt nagyon jó felbontásúak és minőségüek. A modellek szintén kidolgozottak, az animációk ugyanazok.</p> <p>Számomra ebben a játékban is túl alacsony a FOV.</p> <p>A remek pálya dizájn által ebben a játékban is nagyon erős az atmoszféra.</p>";
-  
+
    document.getElementById('fop').src = "img/metroLL.jpg";
-   document.getElementById('sop').src = "img/mll2.png"; 
+   document.getElementById('sop').src = "img/mll2.png";
    document.getElementById('sops').src = "img/mll2.png";
    document.getElementById('top').src = "img/mll3.png";
    document.getElementById('foop').src = "img/mll4.png";
    document.getElementById('foop2').src = "img/mll4.png";
 
 }
-function me(){
+function me() {
+
+   menuIndex = 3;
+
+   defaultmenu();
 
    let cim2 = document.querySelector('h1');
    cim2.innerText = "Metro Exodus";
@@ -74,14 +79,10 @@ function me(){
    karakter.innerHTML = "Rengeteg NPC-t ismersz meg, de ők azok akik veled tartanak:";
 
    let karakterul = document.getElementById('karakterul');
-   karakterul.innerHTML = "<li>Miller: Továbbra is a parancsnok, csak mostmár nem a metró központjában, hanem a vonaton.</li><li>Anna: Ebben a játékban már a feleségedként veled tart a vonaton.</li>  <li> Idiot: Nevét ő választotta irónikusan, mert  talán ő tudja a legtöbbet a legénységből.</li> <li>Yermak: Ő a csapatba a mérnök. Tudja, hogy a vonatot hogyan kell működtetni, karbantartani, megjavítani.</li> <li>Sam, Alyosha, Duke: A csapat maradék tagjai, akik a vonaton veled tartanak.</li>";
+   karakterul.innerHTML = "<li>Miller: Továbbra is a parancsnok, csak mostmár nem a metró központjában, hanem a vonaton.</li><li>Anna: Ebben a játékban már a feleségedként veled tart a vonaton.</li>  <li> Idiot: Nevét ő választotta irónikusan, mert  talán ő tudja a legtöbbet a legénységből.</li> <li>Yermak: Ő a csapatba a mérnök. Tudja, hogy a vonatot hogyan kell működtetni, karbantartani, megjavítani.</li> <li>Sam, Alyosha, Duke, Stephan: A csapat maradék tagjai, akik a vonaton veled tartanak.</li>";
 
    let bek1 = document.getElementById('bek1');
    bek1.innerHTML = "<h2>Vizuális élmény</h2> <p>A grafika még fejlettebb és szebb. Támogatja az RTX technológiát.</p> <p>Látszott mindent bedoptak a fényeknél. A fénysugarak gyönyörűek tudnak lenni.</p> <p>A normálok és a textúrák hozzák a megszokott minőségüket. A modellek, de főleg az animációk sokkal szebbek, részletesebbek és simábbak.</p> <p>Végre felvitték a FOV-ot 80-90 körülire.</p> <p>Én nem szeretem a nyílt világú játékokat igazán, de az Exodus ebben kivétel. Nagyon beszippant a világa és atmoszférája.</p>";
-   
-   menuIndex = 3;
-   
-   defaultmenu();
 
    //képek
    document.getElementById('fop').src = "img/ME12.jpg";
@@ -90,7 +91,7 @@ function me(){
    document.getElementById('top').src = "img/MEDARK.jpg";
    document.getElementById('foop').src = "img/METERM.jpg";
    document.getElementById('foop2').src = "img/MERIVER.jpg";
-   
+
 }
 
 function defaultmenu() {
@@ -98,7 +99,7 @@ function defaultmenu() {
    let defmenuid;
    let def2menuid;
 
-   switch (menuIndex){
+   switch (menuIndex) {
       case 1:
          menuid = "met33";
          defmenuid = "metll";
@@ -116,20 +117,67 @@ function defaultmenu() {
          def2menuid = "metll";
          secure = true;
          break;
-      }
-
-      let chngmenu = document.getElementById(menuid);
-      chngmenu.style = "background-color: rgba(100, 0, 0, 0.3)";
-      
-      let defmenu = document.getElementById(defmenuid);
-      defmenu.style = "background-color: rgba(0, 0, 0, 0)";
-      
-      let def2menu = document.getElementById(def2menuid);
-      def2menu.style = "background-color: rgba(0, 0, 0, 0)";
    }
 
-   function watchout(){
-      if (secure == false){
-         alert("A főcím felett a panelek kattinthatók");
-      }
+   let chngmenu = document.getElementById(menuid);
+   chngmenu.style = "background-color: rgba(100, 0, 0, 0.3)";
+
+   let defmenu = document.getElementById(defmenuid);
+   defmenu.style = "background-color: rgba(0, 0, 0, 0)";
+
+   let def2menu = document.getElementById(def2menuid);
+   def2menu.style = "background-color: rgba(0, 0, 0, 0)";
+}
+
+function watchout() {
+   if (secure == false) {
+      alert("A főcím felett a panelek kattinthatók");
    }
+}
+function login() {
+
+   logev = document.getElementById("loginevent");
+   logev.style = "background-color: rgba(0, 0, 0, 0.6)";
+
+   welcomePoPup = document.getElementById("welcome");
+   welcomePoPup.classList.remove("d-none");
+
+   let space = document.getElementById("after");
+   space.classList.remove("d-none")
+
+      let welcommen = document.getElementById("welcommen");
+   welcommen.classList.add("d-none");
+}
+function closing() {
+   let closePoPup = document.getElementById("welcome");
+   closePoPup.classList.add("d-none");
+
+   let logEv = document.getElementById("loginevent");
+   logEv.style = "background-color: rgba(0, 0, 0, 0.0)";
+
+
+}
+function username() {
+
+   let inputName = document.getElementById("uname").value;
+   
+   if (inputName != "" && inputName != null) {
+      let user = document.getElementById("login");
+      user.innerHTML = "Fiók váltása";
+
+      let userInput = document.getElementById("loginname")
+      userInput.innerHTML = inputName;
+      userInput.classList.remove("d-none");
+      userInput.classList.add("d-inline");
+
+      welcomePoPup = document.getElementById("welcome");
+      welcomePoPup.classList.remove("d-none");
+
+      let welcommen = document.getElementById("welcommen");
+      welcommen.classList.remove("d-none");
+      welcommen.innerHTML = "<h2>Üdv " + inputName + "!</h2><br><p>Köszönöm, hogy bejelentkeztél!</p>";
+      
+      let space = document.getElementById("after");
+      space.classList.add("d-none");
+   }
+}
