@@ -1,6 +1,21 @@
 let menuIndex = 1;
 let secure = false;
+let pleaselog = false;
 let welcomePoPup;
+
+
+let inputName = getCookie("username");
+
+if (inputName != "") {
+   let userInput = document.getElementById("loginname")
+   userInput.innerHTML = inputName;
+   userInput.classList.remove("d-none");
+   userInput.classList.add("d-inline");
+   console.log("no");
+   let buton = document.getElementById("login");
+   buton.innerHTML = "Fiók váltása";
+   pleaselog = true;
+}
 
 function metro33() {
    menuIndex = 1;
@@ -130,8 +145,15 @@ function defaultmenu() {
 }
 
 function watchout() {
-   if (secure == false) {
-      alert("A főcím felett a panelek kattinthatók");
+   if (secure == false && pleaselog == false) {
+      alert("A főcím felett a panelek kattinthatók, és kérem lépjen be!");
+   } else {
+      if (secure == false) {
+         alert("A főcím felett a panelek kattinthatók");
+      }
+      if (pleaselog == false) {
+         alert("Kérem jelentkezzen be!");
+      }
    }
 }
 function login() {
@@ -145,8 +167,9 @@ function login() {
    let space = document.getElementById("after");
    space.classList.remove("d-none")
 
-      let welcommen = document.getElementById("welcommen");
+   let welcommen = document.getElementById("welcommen");
    welcommen.classList.add("d-none");
+
 }
 function closing() {
    let closePoPup = document.getElementById("welcome");
@@ -157,10 +180,38 @@ function closing() {
 
 
 }
+
+function setCookie(cname, cvalue) {
+   document.cookie = cname + "=" + cvalue;
+}
+function getCookie(cname) {
+   let name = cname + "=";
+   let decoded = decodeURIComponent(document.cookie);
+   let ca = decoded.split(';');
+   for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+         c = c.substring(name.length, c.length);
+      }
+      if (c.indexOf(name) == 0) {
+         return c.substring(name.length, c.length);
+      }
+   }
+   return "";
+}
+
 function username() {
 
-   let inputName = document.getElementById("uname").value;
-   
+
+
+   inputName = document.getElementById("uname").value;
+   console.log(inputName);
+   if (inputName != "" && inputName != null) {
+      setCookie("username", inputName);
+      console.log(inputName);
+   }
+
+
    if (inputName != "" && inputName != null) {
       let user = document.getElementById("login");
       user.innerHTML = "Fiók váltása";
@@ -176,8 +227,10 @@ function username() {
       let welcommen = document.getElementById("welcommen");
       welcommen.classList.remove("d-none");
       welcommen.innerHTML = "<h2>Üdv " + inputName + "!</h2><br><p>Köszönöm, hogy bejelentkeztél!</p>";
-      
+
       let space = document.getElementById("after");
       space.classList.add("d-none");
+
+      pleaselog = true;
    }
 }
