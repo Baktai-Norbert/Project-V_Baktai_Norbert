@@ -42,9 +42,7 @@ h2{
 }
 p{
     text-indent: 15px;
-}
-p:first-of-type{
-    text-indent: 0px;
+    text-align: justify;
 }
 footer{   
     background-color: rgba(40, 0, 0, 0.7);
@@ -169,6 +167,7 @@ input{
 #welcommen{
     position: relative;
     top: 10%;
+    text-align: center!important;
 }
 .bar{
     width: 90%;
@@ -263,8 +262,4 @@ a{
 }
 a:hover{
     color: rgb(200, 20, 20);
-}
-.welcomed{
-    height: 200px!important;
-    min-height: 200px!important;
 }

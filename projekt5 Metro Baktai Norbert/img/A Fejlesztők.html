@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="hu">
-
-<head>
-  <meta charset="UTF-8">
+<!-- saved from url=(0131)http://127.0.0.1:5500/ToDo/projekt5%20Metro%20Baktai%20Norbert/htmlmell%C3%A9k/A%20f%C3%BCgg%C3%B6ny%C3%B6k%20m%C3%B6g%C3%B6tt.html -->
+<html lang="hu"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Baktai Norbert">
   <meta name="keywords" content="Metro, Metro 2033, Metro 2034, Metro 2035, Metro Last Light, Metro Exodus">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-  <link href="../css/style.css" rel="stylesheet" type="text/css">
+  <link href="./A Fejlesztők_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link href="./A Fejlesztők_files/style.css" rel="stylesheet" type="text/css">
   <title>A Fejlesztők</title>
 </head>
 
 <body>
-  <div class="d-none text-center position-fixed top-50 start-50 translate-middle text-wrap container" id="welcome">
+  <div class="text-center position-fixed top-50 start-50 translate-middle text-wrap container" id="welcome">
     <form class="text-center text-md-end px-2 m-1 mt-3"><input type="button" onclick="closing()" value="X"></form>
     <div class="row">
       <form id="after">
@@ -27,59 +25,53 @@
         <span class="d-none mt-2" id="wrong">hibás felhasználónév és jelszó páros!</span> <br>
 
         <input type="button" onclick="validate()" class="mt-1 col-12 col-md-4 mx-md-1" value="Belépés">
-        <input type="button" onclick="logusoutus()" class="mt-3 d-none col-12 col-md-4 mx-md-1" value="Kijelentkezés"
-          id="logout">
+        <input type="button" onclick="logusoutus()" class="mt-3 col-12 col-md-4 mx-md-1" value="Kijelentkezés" id="logout">
         <input type="button" onclick="registerpage2()" class="mt-3 col-12 col-md-4 mx-md-1" value="Regisztráció">
       </form>
     </div>
     <span id="welcommen" class="d-none col-12"></span>
   </div>
   <div class="bg" id="bg">
-    <div id="loginevent">
+    <div id="loginevent" style="background-color: rgba(0, 0, 0, 0.6);">
       <header>
         <nav class="navbar navbar-expand-lg navbar-dark navbarbg mt-3 mb-1">
           <div class="container-fluid">
-            <a class="navbar-brand"><span class="menu"><img src="../img/iconll.png" alt="icon" id="icon"></span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-              aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand"><span class="menu"><img src="./A Fejlesztők_files/iconll.png" alt="icon" id="icon"></span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link" href="../Játékok.html">A játékok</a>
+                  <a class="nav-link" href="http://127.0.0.1:5500/ToDo/projekt5%20Metro%20Baktai%20Norbert/J%C3%A1t%C3%A9kok.html">A játékok</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">A Fejlesztők</a>
+                  <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/ToDo/projekt5%20Metro%20Baktai%20Norbert/htmlmell%C3%A9k/A%20f%C3%BCgg%C3%B6ny%C3%B6k%20m%C3%B6g%C3%B6tt.html#">A Fejlesztők</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="Könyvek.html">A könyvek</a>
+                  <a class="nav-link" href="http://127.0.0.1:5500/ToDo/projekt5%20Metro%20Baktai%20Norbert/htmlmell%C3%A9k/K%C3%B6nyvek.html">A könyvek</a>
                 </li>
               </ul>
-              <span class="navbar-text px-4 me-4 d-none" id="loginname">
-
-              </span>
-              <span class="navbar-text px-4 py-1 py-md-2" id="login" onclick="login()">
-                <span id="innerbutton">Belépés</span>
-              </span>
+              <span class="navbar-text px-4 me-4 d-inline" id="loginname">guest</span>
+              <span class="navbar-text px-4 py-1 py-md-2" id="login" onclick="login()">Fiók váltása</span>
             </div>
           </div>
         </nav>
       </header>
       <main class="container m2033">
-        <section class="row">
+        <section class="row text-center">
           <article class="col-12">
             <h1 class="text-center py-4">A fejlesztése</h1>
           </article>
           <article class="col-12 col-md 6 col-lg-4 mb-3 mt-md-4 mt-lg-0">
-            <img src="../img/4alogo.png" alt="4alogo" title="4A Games logója" class="img-fluid">
+            <img src="./A Fejlesztők_files/4alogo.png" alt="4alogo" title="4A Games logója" class="img-fluid">
           </article>
-          <article class="col-12 col-md-6 col-lg-8 pb-3 my-auto ">
+          <article class="col-12 col-md-6 col-lg-8 pb-3 my-auto">
             <h2>A stúdió alapítása</h2>
             <p>A játékokat a 4A Games stúdió Készítette. 2006-ban alapították meg, amikor a GSC Game Worldből kivonult 3 ember belső ellentétek miatt, hogy saját szoftverfejlesztő cégük legyen, ahol a dolgozóknak jobbak a munkakörülményeik. Ukrániában meg is alapították a céget, és a mai napig működik, és készítenek játékokat.</p> <p> Érdekesség: a nevük azért "4A Games" mert az alapítoknak "A" betűvel kezdődött a nevük.</p>
           </article>
           <article class="col-12 col-lg-6 mb-3 d-lg-none">
-            <img src="../img/4ateam1.jpg" alt="4alogo" class="img-fluid op">
+            <img src="./A Fejlesztők_files/4ateam1.jpg" alt="4alogo" class="img-fluid op">
           </article>
           <article class="col-12 col-md-6 col-lg-3 my-auto">
             <h2>A stúdió ma</h2>
@@ -90,21 +82,21 @@
             <p>A cég főként a Metro novella trilógiának videójátékra adaptálásával foglalkozik, de csináltak 2017-ben egy a Metro szériától független VR játékot.</p>
           </article>
           <article class="col-12 col-lg-6 mb-3">
-            <img src="../img/4ateam1.jpg" alt="4ateam2" class="img-fluid op d-none d-lg-inline">
+            <img src="./A Fejlesztők_files/4ateam1.jpg" alt="4ateam2" class="img-fluid op d-none d-lg-inline">
           </article>
           <article class="col-12 col-md-6 col-lg-3 my-auto d-none d-lg-block">
             <h2>Mivel foglalkoznak?</h2>
             <p>A cég főként a Metro novella trilógiának videójátékra adaptálásával foglalkozik, de csináltak 2017-ben egy a Metro szériától független VR játékot is.</p>
           </article>
           <article class="col-12 col-lg-4 mb-3">
-            <img src="../img/4ateam2.jpg" alt="4team2xs" class="img-fluid op">
+            <img src="./A Fejlesztők_files/4ateam2.jpg" alt="4team2xs" class="img-fluid op">
           </article>
           <article class="col-12 col-lg-8 my-auto">
             <h2>Jövőbeli terveik</h2>
             <p>Már elkezdtek dolgozni a következő Metro játékon, annak ellenére, hogy csak 3 könyv van. Teljesen fel akarják újítani az eddig használt motorjukat, és minnél magassabbra tenni a lécet. Terveznek Többjátékos módot implementálni az említett új Metro játékba. Ez annak köszönhető, hogy a stúdiónak nagyobb lett a budget-e. Terveznek még nem Metro játékokat is csinálni. Első ilyen az Arkika 1 volt, de még terveznek többet.</p>
           </article>
           
-          <article class="col-12 text-center">
+          <article class="col-12">
             <h2 class="mb-3">A játékaik</h2>
             <table class="col-12 mt-2">
               <thead>
@@ -140,12 +132,12 @@
                   <td><a href="https://gepigeny.hu/jatek/metro-last-light" target="_blank">Link a Gépigény.hu-ra</a></td>
                   <td><a href="https://gepigeny.hu/jatek/metro-exodus" target="_blank">Link a Gépigény.hu-ra</a></td>
                 </tr>
-              <tfoot>
+              </tbody><tfoot>
                 <tr>
                   <td colspan="4">*Az adatok a játékok sima, <b>nem</b> újrakiadott verziójára vonatkozhatnak, és a lista csak a Metrokat tartalmazza.</td>
                 </tr>
               </tfoot>
-              </tbody>
+              
             </table>
           </article>
 
@@ -154,11 +146,46 @@
       <footer class="text-center mt-5">
         <h6 class="pt-1">Készítette: Baktai Norbert</h6>
       </footer>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-        crossorigin="anonymous"></script>
-      <script src="../JavaScript/Sciptmain.js"></script>
-      <script src="../JavaScript/login.js"></script>
-</body>
+      <script src="./A Fejlesztők_files/bootstrap.bundle.min.js.letöltés" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+      <script src="./A Fejlesztők_files/Sciptmain.js.letöltés"></script>
+      <script src="./A Fejlesztők_files/login.js.letöltés"></script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 
-</html>
+</div></div></body></html>

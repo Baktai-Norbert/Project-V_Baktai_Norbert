@@ -185,20 +185,17 @@ function login() {
 
    welcomePoPup = document.getElementById("welcome");
    welcomePoPup.classList.remove("d-none");
-   welcomePoPup.classList.remove("welcomed");
 
    let space = document.getElementById("after");
    space.classList.remove("d-none")
 
    let welcommen = document.getElementById("welcommen");
    welcommen.classList.add("d-none");
-   welcommen.classList.add("text-center");
 
 }
 function closing() {
    let closePoPup = document.getElementById("welcome");
    closePoPup.classList.add("d-none");
-   welcomePoPup.classList.remove("welcomed");
 
    let logEv = document.getElementById("loginevent");
    logEv.style = "background-color: rgba(0, 0, 0, 0.0)";

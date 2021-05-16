@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Regisztráció</title>
+</head>
+
+<body class="bg r_bg">
+    <header>
+        <nav class="navbar navbar-expand navbar-dark navbarbg mt-3 mb-1">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><span class="menu"><img src="../img/icon2033.ico" alt="icon"
+                            id="icon"></span></a>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mx-auto mx-sm-0 me-sm-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" id="registerhead">Regisztráció</a>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-fluid px-4 pb-4">
+            <div class="row reghk mx-auto">
+              <form id="register">
+                <h2 class="text-center col-12">Kérjük adja meg az alábbi adatokat a fiók létrehozásához:</h2>
+                <label for="r_uname" class="text-center text-md-start d-block">Felhasználónév:</label>
+                <input type="text"  name="r_uname" id="r_uname" class="mt-2 barreg mx-auto mx-md-0 d-block">
+                <label for="r_pass" class="mt-2 text-center text-md-start d-block">Jelszó:</label>
+                <input type="password"  name="r_pass" id="r_pass" class="mt-2 barreg mx-auto mx-md-0 d-block">
+                <span class="d-none" id="wrong">Kérjük jelszava legalább 8 karakter hosszú legyen</span>
+                <input type="button" onclick="regpass()" class="mt-3 mx-auto mx-md-0 d-block" value="Regisztrálj" id="regbut"><br>
+              </form>
+            </div>
+    </main>
+<footer class="text-center r_fot position-fixed"><p>Készítette: Baktai Norbert</p></footer>
+<script src="../JavaScript/Sciptmain.js"></script>
+</body>
+</html>
