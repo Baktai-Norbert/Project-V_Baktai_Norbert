@@ -1,95 +1,149 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Baktai Norbert">
-    <meta name="keywords" content="Metro, Metro 2033, Metro 2034, Metro 2035, Metro Last Light, Metro Exodus">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link href="../css/style.css" rel="stylesheet" type="text/css">
-    <title>A Könyvek</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Baktai Norbert">
+  <meta name="keywords" content="Metro, Metro 2033, Metro 2034, Metro 2035, Metro Last Light, Metro Exodus">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link href="../css/style.css" rel="stylesheet" type="text/css">
+  <title>A Könyvek</title>
 </head>
+
 <body>
   <div class="d-none text-center position-fixed top-50 start-50 translate-middle text-wrap container" id="welcome">
     <form class="text-center text-md-end px-2 m-1 mt-3"><input type="button" onclick="closing()" value="X"></form>
     <div class="row">
       <form id="after">
         <label for="uname" class="text-wrap">Felhasználónév:</label><br>
-        <input type="text"  name="uname" id="uname" class="mt-2 bar"><br>
-        
+        <input type="text" name="uname" id="uname" class="mt-2 bar"><br>
+
         <label for="pass" class="text-wrap mt-2">Jelszó:</label><br>
-        <input type="password"  name="pass" id="pass" class="mt-1 bar"><br>
+        <input type="password" name="pass" id="pass" class="mt-1 bar"><br>
 
         <span class="d-none mt-2" id="wrong">hibás felhasználónév és jelszó páros!</span> <br>
-        
+
         <input type="button" onclick="validate()" class="mt-1 col-12 col-md-4 mx-md-1" value="Belépés">
-        <input type="button" onclick="logusoutus()" class="mt-3 d-none col-12 col-md-4 mx-md-1" value="Kijelentkezés" id="logout"> 
+        <input type="button" onclick="logusoutus()" class="mt-3 d-none col-12 col-md-4 mx-md-1" value="Kijelentkezés"
+          id="logout">
         <input type="button" onclick="registerpage2()" class="mt-3 col-12 col-md-4 mx-md-1" value="Regisztráció">
+        <!--Remélem ez megfelel űrlapnak-->
       </form>
     </div>
     <span id="welcommen" class="d-none"></span>
   </div>
-  <div class="bg" id="bg">
+  <div class="bg thi" id="bg">
     <div id="loginevent">
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark navbarbg mt-3 mb-1">
-      <div class="container-fluid">
-        <a class="navbar-brand"><span class="menu"><img src="../img/iconexo.ico" alt="icon" id="icon"></span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="../Játékok.html">A játékok</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="A függönyök mögött.html">A Fejlesztők</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">A könyvek</a>
-            </li>        
-          </ul>
-          <span class="navbar-text px-4 me-4 d-none" id="loginname">
-        
-          </span>
-          <span class="navbar-text px-4 py-1 py-md-2" id="login" onclick="login()">
-            <span id="innerbutton">Belépés</span>
-          </span>
-        </div>
-      </div>
-    </nav>
-  </header>
-    <main class="container m2033">
-        <section class="row text-center">
-            <article class="col-12">
-                <h1 class="text-center py-4">A könyvek</h1>
-            </article>
-            <article class="col-12 col-md-6 col-xxl-3">
-                <h2>Történet</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur dolorum, beatae dignissimos eos error in ab assumenda veritatis culpa soluta. Earum fugit esse accusamus deleniti adipisci quos provident, necessitatibus inventore?</p>
-            </article>
-            <article class="col-12 col-md-6 col-xxl-3">
-                <h2>Szereplők</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur dolorum, beatae dignissimos eos error in ab assumenda veritatis culpa soluta. Earum fugit esse accusamus deleniti adipisci quos provident, necessitatibus inventore?</p>
-            </article>
-            <article class="col-12 col-md-6 col-xxl-3">
-                <h2>Játékmenet</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur dolorum, beatae dignissimos eos error in ab assumenda veritatis culpa soluta. Earum fugit esse accusamus deleniti adipisci quos provident, necessitatibus inventore?</p>
-            </article>
-            <article class="col-12 col-md-6 col-xxl-3">
-                <h2>Vizuális élmény</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur dolorum, beatae dignissimos eos error in ab assumenda veritatis culpa soluta. Earum fugit esse accusamus deleniti adipisci quos provident, necessitatibus inventore?</p>
-            </article>
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbarbg mt-3 mb-1">
+          <div class="container-fluid">
+            <a class="navbar-brand"><span class="menu"><img src="../img/iconexo.ico" alt="icon" id="icon"></span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+              aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="../Játékok.html">A játékok</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="A függönyök mögött.html">A Fejlesztők</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">A könyvek</a>
+                </li>
+              </ul>
+              <span class="navbar-text px-4 me-4 d-none" id="loginname">
+
+              </span>
+              <span class="navbar-text px-4 py-1 py-md-2" id="login" onclick="login()">
+                <span id="innerbutton">Belépés</span>
+              </span>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main class="container m2033 m33">
+        <section class="row">
+          <article class="col-12">
+            <h1 class="text-center py-4 m3 mt-2">A könyvek</h1>
+          </article>
         </section>
-    </main>
-    <footer class="text-center mt-5">
+        <section class="row">
+          <article class="col-12">
+            <h2>A játékok és könyvek kapcsolata</h2>
+            <p>A játékok a könyvek világján és karakterei által "inspirálódtak". Ez gyakorlatilag azt jelenti, hogy a
+              játékoknak eltér a története a könyvekétől, de a világ azonos. A Metro 2034 könyv a Metro 2033-as könyv
+              történetét folytatja, viszont a Metro 2035 című könyv nem a Metro 2034-et dolgozza fel, hanem annak
+              játékbeli megfelelőjét; a Metro Last Lightot. Mint már említettem, annak ellenére, hogy nincs több könyva
+              fejlesztők már csinálják a következő Metro-t.</p>
+          </article>
+        </section>
+        <section class="row">
+          <article class="col-12 col-md-6 d-md-none">
+            <img src="../img/metro-books-2.jpg" alt="Könyvek" class="img-fluid mb-4 mb-md-5 mt-4 op">
+          </article>
+          <article class="col-12 col-md-6 col-lg-3 my-auto">
+            <h2>Metro 2033</h2>
+            <p>Előszőr interneten jelent meg, aztán 2005-ben könyv formában is. A könyv hivatalosan a disztópikus sci-fi
+              kategóriába esik. Kritizálta a mai Oroszországot és annak társadalmát.</p>
+          </article>
+          <article class="col-12 col-md-6 d-none d-md-inline">
+            <img src="../img/metro-books-2.jpg" alt="Könyvek" class="img-fluid mb-5 mt-3 op">
+          </article>
+          <article class="col-12 col-md-6 col-lg-4 d-lg-none"><img src="../img/Metro_books.png" alt="Könyvek"
+              class="img-fluid mb-4 op">
+          </article>
+          <article class="col-12 col-md-6 col-lg-3 my-auto">
+            <h2>Metro 2034</h2>
+            <p>Mint említettem a 2033-at folytatta. 2009-ben jelent meg. Rengeteg példány el kelt belőle, csak az első
+              fél évben közel 300.000.</p>
+          </article>
+
+        </section>
+        <section class="row">
+          <article class="col-12 col-md-6 col-lg-4 d-none d-lg-inline"><img src="../img/Metro_books.png" alt="Könyvek"
+              class="img-fluid op">
+          </article>
+          <article class="col-12 col-md-6 col-lg-4 d-md-none"><img src="../img/20210221224953_1.jpg" alt="Könyvek"
+              class="img-fluid mt-4 mb-5 op">
+          </article>
+          <article class="col-12 col-md-6 col-lg-4 my-auto">
+            <h2>Metro 2035</h2>
+            <p>Ennek a könyvnek a története azért kivétel, mert az egyik játékot folytatta, nem könyvet. A vége úgy
+              végződik, hogy Artyom és felesége elmennek a disztópikus Moszkvából.</p>
+          </article>
+
+          <article class="col-12 col-md-6 col-lg-4 d-none d-md-inline">
+            <img src="../img/20210221224953_1.jpg" alt="este" class="img-fluid op">
+          </article>
+        </section>
+
+        <section class="row">
+          <article class="col-12 col-md-6 col-lg-4 text-center">
+            <img src="../img/Dmitry_Glukhovsky.jpg" alt="Dmitry" title="Dmitry Glukhovsky"
+              class="img-fluid mt-5 mb-4 op" id="dmitry">
+          </article>
+          <article class="col-12 col-md-6 col-lg-8 my-auto">
+            <h2>Dmitry Glukhovsky</h2>
+            <p>Dmitry moszkvában született 1972-ben. A könyvek írójában már 15 éves korában megfogalmazódott a Metro-k
+              világa. Előszőr 2002-ben online publikálta a Metro 2033-at. Igaz erről a könyveiről a legismertebb, de
+              voltak más könyvei is. A játékok történet írásában is segített, főleg a Last Light-éban.</p>
+          </article>
+        </section>
+      </main>
+      <footer class="text-center mt-5">
         <h6 class="pt-1">Készítette: Baktai Norbert</h6>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-    <script src="../JavaScript/Sciptmain.js"></script>
-    <script src="../JavaScript/login.js"></script>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+      <script src="../JavaScript/Sciptmain.js"></script>
+      <script src="../JavaScript/login.js"></script>
 </body>
+
 </html>

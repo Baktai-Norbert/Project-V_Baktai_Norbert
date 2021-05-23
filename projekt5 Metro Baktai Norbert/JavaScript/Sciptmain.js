@@ -2,11 +2,11 @@
 let menuIndex = 1;
 
 let secure = false;
-let pleaselog = false;
+let pleaselog = false; //alertekhez
 
-let welcomePoPup;
+let welcomePoPup; //felugró login popup
 
-let regUname = getCookie("username"); //change later
+let regUname = getCookie("username"); //regisztrált felhasz.név & jelszó, belépett-e.
 let regPass = getCookie("password");
 
 let loging = getCookie("logged")
@@ -14,6 +14,7 @@ let loging = getCookie("logged")
 let usernn = getCookie("user");
 
 if (loging == 1) {
+   //ha belépett
 
    let logout = document.getElementById("logout");
    logout.classList.remove("d-none");
@@ -27,11 +28,10 @@ if (loging == 1) {
    buton.innerHTML = "Fiók váltása";
 
    offLogWarn();
-
-   console.log(loging);
 }
 
 function metro33() {
+   //ha 1. almenü aktív
    menuIndex = 1;
    defaultmenu();
    let cim1 = document.querySelector('h1');
@@ -61,6 +61,8 @@ function metro33() {
 }
 
 function ll() {
+   //ha a 2.ik
+
    menuIndex = 2;
    defaultmenu();
    let cim2 = document.querySelector('h1');
@@ -90,6 +92,7 @@ function ll() {
 
 }
 function me() {
+   //ha a 3.-ik
 
    menuIndex = 3;
 
@@ -124,10 +127,12 @@ function me() {
 }
 
 function defaultmenu() {
+   //melyik menü aktív & változásuk
+
    let menuid;
    let defmenuid;
    let def2menuid;
-
+   //switch syntax: switch(érték){case érték: <parancsok;> végén break;}
    switch (menuIndex) {
       case 1:
          menuid = "met33";
@@ -162,6 +167,7 @@ function defaultmenu() {
 }
 
 function watchout() {
+   //alert
    if (secure == false && pleaselog == false) {
       alert("A főcím felett a panelek kattinthatók, és kérem lépjen be!");
    
@@ -179,7 +185,7 @@ function watchout() {
    }
 }
 function login() {
-
+   //"belépés" gomb akciója
    logev = document.getElementById("loginevent");
    logev.style = "background-color: rgba(0, 0, 0, 0.6)";
 
@@ -196,6 +202,7 @@ function login() {
 
 }
 function closing() {
+   //popup becsukása
    let closePoPup = document.getElementById("welcome");
    closePoPup.classList.add("d-none");
    welcomePoPup.classList.remove("welcomed");
@@ -205,10 +212,12 @@ function closing() {
 }
 
 function setCookie(cname, cvalue) {
+   //Cookie készítése
    document.cookie = cname + "=" + cvalue + "; path=/";
 }
 
 function getCookie(cname) {
+   //Cookie kikeresése
    let name = cname + "=";
    let decodedCookie = decodeURIComponent(document.cookie);
    let ca = decodedCookie.split(';');
@@ -224,6 +233,7 @@ function getCookie(cname) {
    return "";
 }
 function logusoutus() {
+   //kijelentkezés
    setCookie("logged", "0");
    location.reload();
    setCookie("paneled","");
@@ -237,6 +247,7 @@ function registerpage2() {
 }
 
 function regpass() {
+   //regisztráció
    regUname = document.getElementById("r_uname").value;
    regPass = document.getElementById("r_pass").value;
 
@@ -251,5 +262,3 @@ function regpass() {
 function offLogWarn() {
    pleaselog = true;
 }
-
-//lehet a kód kicsit spagetti de 1. működik, 2. értem miért & hogy működik, 3. attól még hogy spagetti lehet finom.

@@ -1,14 +1,14 @@
 let usern;
 let passw;
-
-
+let x = 5;
 
 function validate(){
+//hitelesítés/bevitt értékek ellenőzése
 usern = document.getElementById("uname").value;
 passw = document.getElementById("pass").value;
 setCookie("user",usern);
 
-if (usern == getCookie("username") && passw == getCookie("password") || usern == "guest"){
+if (usern == getCookie("username") && passw == getCookie("password") && usern != "" && usern != null || usern == "guest"){
     
     document.getElementById("wrong").classList.add("d-none");
 
@@ -43,8 +43,6 @@ if (usern == getCookie("username") && passw == getCookie("password") || usern ==
     logout.classList.remove("d-none");
 
     setCookie("logged", "1");
-    console.log(getCookie("logged"))
-
 }else{
     document.getElementById("wrong").classList.remove("d-none");
 }
