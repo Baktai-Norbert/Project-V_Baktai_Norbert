@@ -35,7 +35,7 @@
                 <label for="r_uname" class="text-center text-md-start d-block">Felhasználónév:</label>
                 <input type="text"  name="r_uname" id="r_uname" class="mt-2 barreg mx-auto mx-md-0 d-block">
                 <label for="r_pass" class="mt-2 text-center text-md-start d-block">Jelszó:</label>
-                <input type="password"  name="r_pass" id="r_pass" class="mt-2 barreg mx-auto mx-md-0 d-block">
+                <input type="password"  name="r_pass" id="r_pass" class="mt-2 barreg mx-auto mx-md-0 d-block" onkeypress="return NOSPACE(event)">
                 <span class="d-none" id="wrong">Kérjük jelszava legalább 8 karakter hosszú legyen</span>
                 <input type="button" onclick="regpass()" class="mt-3 mx-auto mx-md-0 d-block" value="Regisztrálj" id="regbut"><br>
               </form>

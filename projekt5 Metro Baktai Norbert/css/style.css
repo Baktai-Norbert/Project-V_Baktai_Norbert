@@ -15,6 +15,10 @@
     from{opacity: 0;}
     to {opacity: 0.8;}
 }
+@keyframes slide{
+    from{padding-right: 100%;}
+    to{padding-right:0;}
+}
 
 ::-webkit-scrollbar{
     width: 12px;
@@ -42,9 +46,10 @@ body{
     background-color: rgba(100, 0, 0, 0.5);
     box-shadow: 0px 0px 10px rgba(100, 0, 0, 0.4);
     animation-name: load;
-    animation-duration: 0.3s;
+    animation-duration: 0.5s;
     animation-timing-function: ease-out;
     z-index: 1;
+    
 }
 h1{
     font-family: Monoton, cursive;
@@ -53,6 +58,15 @@ h1{
     font-size: 340%;
     text-shadow: 5px 5px 2px rgba(100, 0, 0, 0.9);
     background-color: rgba(0, 0, 0, 0.5);
+   
+}
+@media screen and (min-width: 576px){
+    h1{
+        animation-name: slide;
+        animation-duration: 0.7s;
+        animation-timing-function: ease-out;
+        overflow-wrap: normal!important;
+    }
 }
 h2{
     font-family:Pontano Sans, sans-serif;
@@ -69,6 +83,11 @@ footer{
     height: 30px;
     border-top: 4px solid rgba(40, 0, 0, 0.85);
     color: rgba(255, 255, 255, 0.55);
+    transition: color 0.55s, background 0.4s;
+}
+footer:hover{
+    background-color: rgba(100, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.85);
 }
 h6{
     font-weight: normal;
@@ -98,14 +117,19 @@ nav{
     border-radius: 0;
     border: 2px rgba(0, 0, 0, 0.8) solid!important;
     color: rgba(30, 0, 0, 0.5)!important;
+    transition: background 0.2s, border 0.5s, box-shadow 0.5s;
+}
+.navbar-toggler:hover{
+    background-color: rgba(100, 0, 0, 0.5)!important;
 }
 .navbar-toggler:focus{
-    border: 2px rgba(0, 0, 0, 0.5) solid!important;
+    border: 1px rgba(0, 0, 0, 0.5) solid!important;
     box-shadow: 0 0 0 0.25rem!important;
+    background-color: rgba(100, 0, 0, 0.5)!important;
 }
 
 .menu{
-    color: rgba(255, 255, 255, 1);
+    color: rgb(255, 255, 255);
 }
 .bold{
     font-weight: bold;
@@ -117,7 +141,16 @@ img{
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
     z-index: 1; /*animáció miatt ha gyorsan nyomnak a belépés gombra akkor a képek a popup ablak felett volak-e nélkül*/
+    
 }
+img:not(#icon){
+    transition: border 0.6s, opacity 0.4s;
+}
+img:not(#icon):hover{
+    opacity: 1;
+    border: 5px solid rgba(100, 0, 0, 0.4); 
+}
+/*Ikonokra ne vonatkozzon*/
 li{
     list-style-image: url(../img/listsymbol3.png);
 }
@@ -134,6 +167,7 @@ li{
 .almenu{
     border: rgba(0, 0, 0, 0.75) 2px solid;
     text-shadow: 2px 2px 1px rgba(30, 0, 0, 1);
+    transition: background 0.3s;
 }
 #met33{
     background-color: rgba(100, 0, 0, 0.3);
@@ -146,6 +180,7 @@ li{
     box-shadow: 5px 5px 3px rgba(40, 0, 0, 1);
     border-top: 0;
     border-left: 0;
+    transition: background 0.27s;
 }
 #login:hover{
     background-color: rgba(150, 0, 0, 0.3);
@@ -176,6 +211,10 @@ input{
     background-color: rgba(100, 0, 0, 0.3);
     color: rgba(200, 200, 200, 0.8);
     box-shadow: -1px 1px 5px rgba(100, 0, 0, 0.9);
+    transition: background 0.26s;
+}
+input:hover{
+    background-color: rgba(100, 0, 0, 0.2);
 }
 #welcommen{
     position: relative;
@@ -200,6 +239,7 @@ input{
     animation-name: load;
     animation-duration: 0.3s;
     animation-timing-function: ease-out;
+    transition: none;
 }
 #icon:hover{
     cursor: default;
@@ -234,6 +274,9 @@ input{
     background-color: rgba(100, 0, 0, 0.6);
     color: rgba(255, 255, 255, 0.89);
 }
+#regbut:hover{
+    background-color: rgba(100, 0, 0, 0.4);
+}
 th, td{
     width: 25%;
     border: 2px solid rgba(100, 0, 0, 0.7);
@@ -247,6 +290,9 @@ table{
 th{
     font-weight: normal;
     background-color: rgba(20, 0, 0, 0.6);
+}
+tr{
+    transition: background 0.3s;
 }
 tr:nth-child(even){
     background-color: rgba(20, 0, 0, 0.6);

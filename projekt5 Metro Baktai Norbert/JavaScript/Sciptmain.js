@@ -13,6 +13,10 @@ let loging = getCookie("logged")
 
 let usernn = getCookie("user");
 
+let typed = 0;
+
+let typedmore = 0;
+
 if (loging == 1) {
    //ha belépett
 
@@ -170,12 +174,12 @@ function watchout() {
    //alert
    if (secure == false && pleaselog == false) {
       alert("A főcím felett a panelek kattinthatók, és kérem lépjen be!");
-   
+
    } else {
       if (secure == false) {
-         if(getCookie("paneled") != "true"){
+         if (getCookie("paneled") != "true") {
             console.log(getCookie("paneled"));
-            setCookie("paneled","true");
+            setCookie("paneled", "true");
             alert("A főcím felett a panelek kattinthatók");
          }
       }
@@ -236,7 +240,7 @@ function logusoutus() {
    //kijelentkezés
    setCookie("logged", "0");
    location.reload();
-   setCookie("paneled","");
+   setCookie("paneled", "");
    console.log(getCookie("paneled"))
 }
 function registerpage() {
@@ -261,4 +265,22 @@ function regpass() {
 }
 function offLogWarn() {
    pleaselog = true;
+}
+
+function NOSPACE(event) {
+   let nop = event ? event.which : window.event.keyCode;
+   if (nop == 32) {
+      typed++;
+      if (typed == 3) {
+         if (typedmore == 3) {
+            alert("Szerintem beragadt a szóköze.");
+            typedmore = 0;
+         }
+         alert("A jelszó nem tartalmazhat szóközt.");
+         typed = 0;
+         typedmore++;
+      }
+      return false;
+   }
+   
 }
